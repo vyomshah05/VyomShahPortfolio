@@ -1,16 +1,14 @@
 import meImg from "../assets/me.jpg";
 import "./About.css";
-
+import useInView from "../hooks/useInView";
 export default function About() {
   return (
     <section id="about" className="about">
       <div className="about__container">
-        {/* Left: image */}
         <div className="about__imageWrapper">
           <img src={meImg} alt="Vyom Shah" className="about__image" />
         </div>
 
-        {/* Right: text */}
         <div className="about__content">
           <h2 className="about__title">About Me</h2>
 

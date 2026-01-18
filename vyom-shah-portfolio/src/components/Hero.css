@@ -1,122 +1,117 @@
 .hero {
     position: relative;
-    min-height: 100vh;          /* full screen */
+    min-height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  
-    /* This makes text readable even if image is bright */
+    
     color: white;
     overflow: hidden;
-  }
-  
-  .hero__overlay {
+}
+    
+.hero__overlay {
     position: absolute;
     inset: 0;
-  
-    /* “Shadowed” / darkened look */
+
     background: rgba(0, 0, 0, 0.55);
-  
-    /* Optional: subtle vignette */
+    
     box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.6);
     pointer-events: none;
-  }
-  
-  .topbar {
+    }
+    
+.topbar {
     position: relative;
     z-index: 2;
-  
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+    
     padding: 20px 28px;
-  
+    
     flex-wrap: nowrap;
     gap: 16px;
-  }
+}
 
-  .topbar--fixed {
+.topbar--fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-  
+    
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(6px);
-  
+    
     z-index: 1000;
-  
-    /* subtle separation */
+    
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  }
-  
-  .topbar__name {
+}
+    
+.topbar__name {
     font-weight: 800;
     letter-spacing: 0.4px;
-  
+    
     font-size: 1.2rem;
     line-height: 1;
-  
+    
     flex: 0 0 auto;
-  }
-  
-  .topbar__links {
+}
+    
+.topbar__links {
     display: flex;
     align-items: center;
     gap: 18px;
     font-weight: 700;
     opacity: 0.95;
-  
+    
     flex: 0 0 auto;
-  }
-  
-  .topbar__link {
+}
+    
+.topbar__link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-  
+    
     padding: 10px 14px;
     font-size: 1rem;
-  
+    
     border-radius: 12px;
-  
-    /* nice subtle button feel on dark bg */
+    
     background: rgba(255, 255, 255, 0.10);
-  
+    
     transition: transform 150ms ease, background 150ms ease;
     will-change: transform;
-  }
-  
-  .topbar__icon {
+}
+    
+.topbar__icon {
     width: 20px;
     height: 20px;
     object-fit: contain;
-  }
-  
-  .topbar__link:hover {
+}
+    
+.topbar__link:hover {
     transform: scale(1.06);
     background: rgba(255, 255, 255, 0.16);
-  }
-  
-  @media (max-width: 640px) {
+}
+    
+@media (max-width: 640px) {
     .topbar {
-      flex-wrap: wrap;
-      justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
-  
+    
     .topbar__links {
-      width: 100%;
-      flex-wrap: wrap;
-      gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
     }
-  }
+}
 
-  .hero__content {
+.hero__content {
     position: relative;
     z-index: 2;
-  
+    
     min-height: calc(100vh - 72px);
     display: flex;
     flex-direction: column;
@@ -128,24 +123,47 @@
     padding: 0 28px 40px;
     max-width: 1000px;
     margin: 0 auto;
-  }
-  
-  .hero__title {
+}
+    
+.hero__title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 0 0 10px;
-  }
-  
-  .hero__subtitle {
+}
+    
+.hero__subtitle {
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     margin: 0;
     opacity: 0.9;
-  }
-  
-  /* Make topbar wrap nicely on mobile */
-  @media (max-width: 520px) {
+}
+    
+@media (max-width: 520px) {
     .topbar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
-  }
+}
+
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-weight: 800;
+}
+
+.topbar__nav a {
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.topbar__nav a:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}

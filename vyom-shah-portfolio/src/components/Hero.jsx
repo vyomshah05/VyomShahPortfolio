@@ -10,7 +10,7 @@ export default function Hero() {
 
     useEffect(() => {
         const onScroll = () => {
-            setScrolled(window.scrollY > 80); // threshold just past topbar
+            setScrolled(window.scrollY > 80);
         };
 
         window.addEventListener("scroll", onScroll);
@@ -21,7 +21,16 @@ export default function Hero() {
             <div className="hero__overlay" />
 
             <nav className={`topbar ${scrolled ? "topbar--fixed" : ""}`}>
-                <div className="topbar__name">Vyom Shah</div>
+                <div className="topbar__left">
+                    <div className="topbar__name">Vyom Shah</div>
+
+                    <div className="topbar__nav">
+                        <a href="#about">About Me</a>
+                        <a href="#education">Education</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#projects">Projects</a>
+                    </div>
+                </div>
 
                 <div className="topbar__links">
                     <a

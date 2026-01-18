@@ -1,0 +1,51 @@
+.reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+.reveal.is-visible {
+    opacity: 1;
+}
+.reveal--up.is-visible {
+    animation: revealUp 650ms ease-out both;
+}
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to     { opacity: 1; transform: translateY(0); }
+}
+
+.reveal--right.is-visible {
+    animation: revealRight 650ms ease-out both;
+}
+@keyframes revealRight {
+    from { opacity: 0; transform: translateX(-36px); }
+    to     { opacity: 1; transform: translateX(0); }
+}
+
+.reveal--scale.is-visible {
+    animation: revealScale 650ms ease-out both;
+}
+@keyframes revealScale {
+    from { opacity: 0; transform: scale(0.94); }
+    to     { opacity: 1; transform: scale(1); }
+}
+
+.reveal--down.is-visible {
+    animation: revealDown 650ms ease-out both;
+}
+@keyframes revealDown {
+    from { opacity: 0; transform: translateY(-26px); }
+    to     { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.is-visible,
+    .reveal--up.is-visible,
+    .reveal--right.is-visible,
+    .reveal--scale.is-visible,
+    .reveal--down.is-visible {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

@@ -1,0 +1,97 @@
+.experience {
+    background: black;
+    color: white;
+    padding: 96px 24px;
+}
+
+.section_title {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+    
+.experience__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+    display: grid;
+    grid-template-columns: 0.9fr auto 1.6fr;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.research__logo {
+    width: 250px;
+    margin-bottom: 12px;
+}
+
+.experience__company {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.experience__date {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #bbbbbb;
+        margin-top: 4px;
+}
+
+.experience__logo {
+        width: 250px;
+        margin-bottom: 12px;
+}
+
+.experience__divider {
+    width: 4px;
+    background: white;
+    border-radius: 2px;
+    align-self: stretch;
+}
+
+.experience__details {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.experience__details > div {
+    margin-bottom: 12px;
+}
+
+.experience__information {
+    margin-top: 16px;
+}
+
+.experience__information ul {
+    font-size: 1.1rem;
+    margin: 8px 0 0;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.experience__information li {
+    margin-bottom: 8px;
+}
+
+    
+@media (max-width: 900px) {
+    .experience__container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .experience__divider {
+        width: 100%;
+        height: 4px;
+    }
+
+    .experience__company {
+        text-align: center;
+    }
+}
+    
