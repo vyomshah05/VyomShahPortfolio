@@ -8,6 +8,7 @@ import Vroom from "../assets/projects/vroom.jpg";
 import Lingo from "../assets/projects/lingo.jpg";
 import Zot from "../assets/projects/zot.jpg";
 import Gyro from "../assets/projects/gyro.png";
+import File from "../assets/projects/file_sys.png";
 
 const projects = [
     {
@@ -80,6 +81,15 @@ const projects = [
             github: "https://github.com/vyomshah05/184_final_project",
             // devpost omitted
             // demo omitted
+        },
+    },
+    {
+        name: "File System",
+        blurb: "A custom in-memory file system implementation",
+        image: File,
+        tech: "Python, Object-Oriented Programming, Data Structures, Algorithms, Unit Testing, Operating Systems",
+        links: {
+            github: "https://github.com/vyomshah05/File-System"
         },
     },
 ];
