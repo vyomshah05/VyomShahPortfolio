@@ -1,10 +1,13 @@
+import useInView from "../hooks/useInView";
 import "./Education.css";
 
 export default function Education() {
+    const [ref, inView] = useInView({ threshold: 0.1 });
+
     return (
         <section id="education" className="education">
             <h2 className="section_title">Education</h2>
-            <div className="education__container">
+            <div ref={ref} className={`education__container reveal reveal--left ${inView ? 'is-visible' : ''}`}>
                 <div className="education__school">
                     University of California, Irvine
 

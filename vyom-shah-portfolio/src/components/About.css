@@ -12,6 +12,16 @@
   grid-template-columns: 0.7fr 1.3fr;
   gap: 48px;
   align-items: center;
+  
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+}
+
+.about__container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
   
 .about__imageWrapper {

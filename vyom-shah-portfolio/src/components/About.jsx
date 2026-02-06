@@ -1,10 +1,13 @@
 import meImg from "../assets/me.jpg";
+import useInView from "../hooks/useInView";
 import "./About.css";
 
 export default function About() {
+  const [ref, inView] = useInView({ threshold: 0.1 });
+
   return (
     <section id="about" className="about">
-      <div className="about__container">
+      <div ref={ref} className={`about__container reveal reveal--up ${inView ? 'is-visible' : ''}`}>
         <div className="about__imageWrapper">
           <img src={meImg} alt="Vyom Shah" className="about__image" />
         </div>

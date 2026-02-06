@@ -21,6 +21,16 @@
     grid-template-columns: 0.9fr auto 1.6fr;
     gap: 48px;
     align-items: flex-start;
+    
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateX(-36px);
+    transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+}
+
+.experience__container.is-visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .research__logo {

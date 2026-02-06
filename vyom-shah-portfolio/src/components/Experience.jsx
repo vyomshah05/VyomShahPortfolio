@@ -1,3 +1,4 @@
+import useInView from "../hooks/useInView";
 import "./Experience.css";
 import Aerlync from "../assets/logos/aerlync.png";
 import Zepto from "../assets/logos/zepto.png";
@@ -6,10 +7,16 @@ import AI from "../assets/logos/aiuci.png";
 import DB from "../assets/logos/db.jpeg";
 
 export default function Experience() {
+    const [ref1, inView1] = useInView({ threshold: 0.1 });
+    const [ref2, inView2] = useInView({ threshold: 0.1 });
+    const [ref3, inView3] = useInView({ threshold: 0.1 });
+    const [ref4, inView4] = useInView({ threshold: 0.1 });
+    const [ref5, inView5] = useInView({ threshold: 0.1 });
+
     return (
         <section id="experience" className="experience">
             <h2 className="section_title">Experience</h2>
-            <div className="experience__container">
+            <div ref={ref1} className={`experience__container reveal reveal--right ${inView1 ? 'is-visible' : ''}`}>
                 <div className="experience__company">
                     <img src={Aerlync} alt="Aerlync Labs Logo" className="experience__logo" />
 
@@ -41,7 +48,7 @@ export default function Experience() {
                     </div>
                 </div>
             </div>
-            <div className="experience__container">
+            <div ref={ref2} className={`experience__container reveal reveal--right ${inView2 ? 'is-visible' : ''}`}>
                 <div className="experience__company">
                     <img src={Zepto} alt="Zepto Digital Labs Logo" className="experience__logo" />
 
@@ -81,7 +88,7 @@ export default function Experience() {
             </div>
 
             <h2 className="section_title">Research</h2>
-            <div className="experience__container">
+            <div ref={ref3} className={`experience__container reveal reveal--right ${inView3 ? 'is-visible' : ''}`}>
                 <div className="experience__company">
                     <img src={CARL} alt="CARL" className="research__logo" />
 
@@ -133,7 +140,7 @@ export default function Experience() {
 
             <h2 className="section_title">Leadership</h2>
 
-            <div className="experience__container">
+            <div ref={ref4} className={`experience__container reveal reveal--right ${inView4 ? 'is-visible' : ''}`}>
                 <div className="experience__company">
                     <img src={AI} alt="AI UCI Logo" className="experience__logo" />
                     <div className="experience__details">
@@ -171,7 +178,7 @@ export default function Experience() {
                 </div>
             </div>
 
-            <div className="experience__container">
+            <div ref={ref5} className={`experience__container reveal reveal--right ${inView5 ? 'is-visible' : ''}`}>
                 <div className="experience__company">
                     <img src={DB} alt="UCI DB" className="experience__logo" />
                     <div className="experience__details">
