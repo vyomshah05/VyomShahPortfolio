@@ -1,3 +1,4 @@
+import useInView from "../hooks/useInView";
 import "./Projects.css";
 import placeholderImg from "../assets/hero.png";
 
@@ -95,51 +96,65 @@ const projects = [
 ];
 
 export default function Projects() {
+    const [ref1, inView1] = useInView({ threshold: 0.1 });
+    const [ref2, inView2] = useInView({ threshold: 0.1 });
+    const [ref3, inView3] = useInView({ threshold: 0.1 });
+    const [ref4, inView4] = useInView({ threshold: 0.1 });
+    const [ref5, inView5] = useInView({ threshold: 0.1 });
+    const [ref6, inView6] = useInView({ threshold: 0.1 });
+    const [ref7, inView7] = useInView({ threshold: 0.1 });
+    const [ref8, inView8] = useInView({ threshold: 0.1 });
+
     return (
         <section id="projects" className="projects">
             <div className="projects__container">
                 <h2 className="projects__title">Projects</h2>
 
                 <div className="projects__grid">
-                    {projects.map((p) => (
-                        <article key={p.name} className="projectCard">
-                            {/* FRONT */}
-                            <div
-                                className="projectCard__front"
-                                style={{ backgroundImage: `url(${p.image || placeholderImg})` }}
-                            >
-                                <div className="projectCard__fade" />
-                                <div className="projectCard__frontContent">
-                                    <div className="projectCard__name">{p.name}</div>
-                                    <div className="projectCard__blurb">{p.blurb}</div>
+                    {projects.map((p, index) => {
+                        const refs = [ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8];
+                        const inViews = [inView1, inView2, inView3, inView4, inView5, inView6, inView7, inView8];
+                        
+                        return (
+                            <article key={p.name} ref={refs[index]} className={`projectCard reveal ${inViews[index] ? 'is-visible' : ''}`}>
+                                {/* FRONT */}
+                                <div
+                                    className="projectCard__front"
+                                    style={{ backgroundImage: `url(${p.image || placeholderImg})` }}
+                                >
+                                    <div className="projectCard__fade" />
+                                    <div className="projectCard__frontContent">
+                                        <div className="projectCard__name">{p.name}</div>
+                                        <div className="projectCard__blurb">{p.blurb}</div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* BACK */}
-                            <div className="projectCard__back">
-                                <div className="projectCard__backTitle">Tech Stack</div>
-                                <div className="projectCard__tech">{p.tech}</div>
+                                {/* BACK */}
+                                <div className="projectCard__back">
+                                    <div className="projectCard__backTitle">Tech Stack</div>
+                                    <div className="projectCard__tech">{p.tech}</div>
 
-                                <div className="projectCard__links">
-                                    {p.links?.github && (
-                                        <a href={p.links.github} target="_blank" rel="noreferrer">
-                                            GitHub
-                                        </a>
-                                    )}
-                                    {p.links?.devpost && (
-                                        <a href={p.links.devpost} target="_blank" rel="noreferrer">
-                                            Devpost
-                                        </a>
-                                    )}
-                                    {p.links?.demo && (
-                                        <a href={p.links.demo} target="_blank" rel="noreferrer">
-                                            Demo Video
-                                        </a>
-                                    )}
+                                    <div className="projectCard__links">
+                                        {p.links?.github && (
+                                            <a href={p.links.github} target="_blank" rel="noreferrer">
+                                                GitHub
+                                            </a>
+                                        )}
+                                        {p.links?.devpost && (
+                                            <a href={p.links.devpost} target="_blank" rel="noreferrer">
+                                                Devpost
+                                            </a>
+                                        )}
+                                        {p.links?.demo && (
+                                            <a href={p.links.demo} target="_blank" rel="noreferrer">
+                                                Demo Video
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    ))}
+                            </article>
+                        );
+                    })}
                 </div>
             </div>
         </section>
