@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About"
 import Education from "./components/Education";
@@ -7,13 +8,19 @@ import "./styles/global.css";
 import "./styles/animations.css";
 
 export default function App() {
+  const [animationKey, setAnimationKey] = useState(0);
+
+  const resetAnimations = () => {
+    setAnimationKey(prev => prev + 1);
+  };
+
   return (
     <>
-      <Hero />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
+      <Hero onResetAnimations={resetAnimations} />
+      <About key={`about-${animationKey}`} />
+      <Education key={`education-${animationKey}`} />
+      <Experience key={`experience-${animationKey}`} />
+      <Projects key={`projects-${animationKey}`} />
     </>
   )
 }

@@ -5,7 +5,7 @@ import linkedinIcon from "../assets/icons/linkedin.png";
 import mailIcon from "../assets/icons/mail.png";
 import "./Hero.css";
 
-export default function Hero() {
+export default function Hero({ onResetAnimations }) {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -16,13 +16,31 @@ export default function Hero() {
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    const handleNameClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Wait for scroll to complete at the top before resetting animations
+        const checkScrollComplete = () => {
+            if (window.scrollY === 0) {
+                if (onResetAnimations) {
+                    onResetAnimations();
+                }
+            } else {
+                requestAnimationFrame(checkScrollComplete);
+            }
+        };
+        
+        requestAnimationFrame(checkScrollComplete);
+    };
+
     return (
         <header className="hero" style={{ backgroundImage: `url(${heroImg})` }}>
             <div className="hero__overlay" />
 
             <nav className={`topbar ${scrolled ? "topbar--fixed" : ""}`}>
                 <div className="topbar__left">
-                    <div className="topbar__name">Vyom Shah</div>
+                    <div className="topbar__name" onClick={handleNameClick} style={{ cursor: 'pointer' }}>Vyom Shah</div>
 
                     <div className="topbar__nav">
                         <a href="#about">About Me</a>
