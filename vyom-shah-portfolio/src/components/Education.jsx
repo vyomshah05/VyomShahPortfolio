@@ -26,7 +26,9 @@ export default function Education() {
                     <div className="education__coursework">
                         <strong>Relevant Coursework:</strong>
                         <ul>
-                            <li>Data Structure Implementation and Analysis, Design and Analysis of Algorithms, Machine Learning and Data-Mining, Algorithms for Probabilistic and Deterministic Graphical Models, Artificial Intelligence in Biology and Medicine, Database Management, Principles of Operating Systems, Principles in System Design, Internet of Things (IoT) Software and Systems, Project in Computer Vision</li>
+                            <li><u>Core CS:</u> Data Structure Implementation and Analysis, Design and Analysis of Algorithms, Principles of Operating Systems, Principles in System Design </li>
+                            <li><u>Artificial Intelligence:</u> Introduction to Artificial Intelligence, Machine Learning and Data-Mining, Algorithms for Probabilistic and Deterministic Graphical Models, Artificial Intelligence in Biology and Medicine</li>
+                            <li><u>Other:</u> Internet of Things (IoT) Software and Systems, Database Management, Project in Computer Vision</li>
                         </ul>
                     </div>
                 </div>
